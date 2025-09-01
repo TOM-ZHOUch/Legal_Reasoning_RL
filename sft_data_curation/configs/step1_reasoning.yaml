@@ -1,0 +1,38 @@
+input_file: /aifs4su/hansirui_2nd/caochuxue/GDRL/raw_data/webinstruct/train/webinstruct_train_10k.json
+output_dir: /aifs4su/hansirui_2nd/caochuxue/GDRL/nl2formal-fast/process
+
+dataset_version: webinstruct_train_10k
+
+model_id: deepseek-r1
+
+
+
+api_key: EMPTY
+
+use_system_prompt: False
+
+temperature: 0.6
+
+batch_size: 8
+concurrency: 16
+
+
+# distill1
+base_url: http://dgx-046:30000/v1/chat/completions
+start: 0
+end: 1000
+save_id: _1k
+
+
+# distill2 
+# base_url: http://dgx-020:30000/v1/chat/completions
+# start: 1000
+# end: 6000
+# save_id: _1k-6k
+
+n: 1
+
+
+task: step1_reasoning
+
+price_file: /aifs4su/hansirui_2nd/caochuxue/llm_price.json
